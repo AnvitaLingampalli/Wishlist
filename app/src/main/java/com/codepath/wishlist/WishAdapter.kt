@@ -1,5 +1,6 @@
 package com.codepath.wishlist
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAdapter.ViewHolder>() {
     // Provide a direct reference to each of the views within a data item
-    // Used to cache the views within the item layout for fast access
+    // Used to cache the views within the item layout for fast acces
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         // TODO: Create member variables for any view that will be set
@@ -22,6 +23,7 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
         init {
             // TODO: Store each of the layout's views into
             // the public final member variables created above
+            Log.d("testing", "in init")
             itemTextView = itemView.findViewById(R.id.itemTv)
             priceTextView = itemView.findViewById(R.id.priceTv)
             urlTextView = itemView.findViewById(R.id.urlTv)
@@ -29,6 +31,7 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.d("testing", "in onCreate")
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val contactView = inflater.inflate(R.layout.wish_item, parent, false)
@@ -36,6 +39,7 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        Log.d("testing", "in Bind")
         val wish = wishes.get(position)
         holder.itemTextView.text = wish.name
         holder.priceTextView.text = wish.price
