@@ -14,14 +14,11 @@ class WishFetcher{
         var urls = getUrl()
 
         fun getWishes() : MutableList<Wish>{
-            Log.d("testing", "in getWishes")
             var wishes : MutableList<Wish> = ArrayList()
             for(i in items.indices) {
-                Log.d("testing", "in the FOR LOOP")
                 val wish = Wish(items[i], prices[i], urls[i])
                 wishes.add(wish)
             }
-            Log.d("testing", "outoffor")
             return wishes
         }
 

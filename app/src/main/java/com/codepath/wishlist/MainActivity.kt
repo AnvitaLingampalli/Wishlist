@@ -26,27 +26,16 @@ class MainActivity : AppCompatActivity() {
         var priceList = arrayListOf<String>()
         var urlList = arrayListOf<String>()
 
-        Log.d("testing", "before onclick")
         button.setOnClickListener {
-            Log.d("testing", "in the onclick")
             var item = itemEtv.text.toString()
-            Log.d("checkval", item.toString())
             itemsList.add(item)
 
             var price = priceEtv.text.toString()
-            Log.d("checkval", price.toString())
             priceList.add(price)
 
             var url = urlEtv.text.toString()
-            Log.d("checkval", url.toString())
             urlList.add(url)
 
-            var i = itemsList
-            var p = priceList
-            var u = urlList
-            Log.d("hmm", i.toString())
-            Log.d("hmm", p.toString())
-            Log.d("hmm", u.toString())
 
             setAllVar(itemsList, priceList, urlList)
 

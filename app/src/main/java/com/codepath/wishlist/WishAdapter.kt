@@ -23,7 +23,6 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
         init {
             // TODO: Store each of the layout's views into
             // the public final member variables created above
-            Log.d("testing", "in init")
             itemTextView = itemView.findViewById(R.id.itemTv)
             priceTextView = itemView.findViewById(R.id.priceTv)
             urlTextView = itemView.findViewById(R.id.urlTv)
@@ -31,7 +30,6 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.d("testing", "in onCreate")
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val contactView = inflater.inflate(R.layout.wish_item, parent, false)
@@ -39,7 +37,6 @@ class WishAdapter(private val wishes : List<Wish>) : RecyclerView.Adapter<WishAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.d("testing", "in Bind")
         val wish = wishes.get(position)
         holder.itemTextView.text = wish.name
         holder.priceTextView.text = wish.price
